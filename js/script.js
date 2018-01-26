@@ -25,7 +25,7 @@ input.addEventListener("blur", function () {
     }
 });
 
-input.addEventListener("keyup", function (event) {
+input.addEventListener("keyup", function () {
     if (input != null && input.value.length > 7) {
         input.parentNode.classList.add("valid");
         input.parentNode.classList.remove("has-error");
