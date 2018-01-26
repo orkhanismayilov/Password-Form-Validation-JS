@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,700;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form class="pass_form" action="#" method="post">
+        <div class="input">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input_line" name="password" msg="Password is less than 8 characters">
+        </div>
+        <div class="input">
+            <label for="password">Re-enter Password</label>
+            <input type="password" id="password_re" class="input_line" name="password" msg="Passwords are not matching" msg1="Please, re-enter password">
+        </div>
+        <button type="submit" id="submit" class="btn">Submit</button>
+        <button type="reset" id="reset" class="btn">Reset</button>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    width: 970px;
+    margin: 0 auto;
+}
+
+.pass_form{
+    margin-top: 50px;
+}
+
+.pass_form .input{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.pass_form .input label{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.pass_form .input .input_line{
+    width: 50%;
+    display: block;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 2px;
+    height: 24px;
+    padding: 0 5px;
+}
+
+.btn{
+    border: none;
+    padding: 10px 15px;
+    background: seagreen;
+    color: white;
+    border-radius: 2px;
+    font-weight: bold;
+    outline: none;
+}
+
+.btn:active{
+    background: grey;
+}
+
+.has-error .input_line{
+    border: 1px solid red !important;
+}
+
+.has-error span{
+    color: red;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.valid .input_line{
+    border: 1px solid green !important;
+}
