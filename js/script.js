@@ -9,7 +9,7 @@ input.addEventListener("blur", function () {
         input.parentNode.classList.add("valid");
         input.parentNode.classList.remove("has-error");
         if (input.parentNode.children[2] != null) {
-            input.parentNode.removeChild(input.nextElementSibling);
+            input.parentNode.removeChild(input.parentNode.children[2]);
         }
     } else if (input == null || input.value.length < 8) {
         input.parentNode.classList.remove("valid");
@@ -17,7 +17,7 @@ input.addEventListener("blur", function () {
         input.parentNode.classList.add("has-error");
         input.parentNode.appendChild(span);
         if (input.parentNode.children[3] != null) {
-            input.parentNode.removeChild(input.nextElementSibling);
+            input.parentNode.removeChild(input.parentNode.children[3]);
         }
     } else {
         input.parentNode.classList.remove("has-error");
@@ -25,12 +25,12 @@ input.addEventListener("blur", function () {
     }
 });
 
-input.addEventListener("keyup", function () {
+input.addEventListener("keyup", function (event) {
     if (input != null && input.value.length > 7) {
         input.parentNode.classList.add("valid");
         input.parentNode.classList.remove("has-error");
         if (input.parentNode.children[2] != null) {
-            input.parentNode.removeChild(input.nextElementSibling);
+            input.parentNode.removeChild(input.parentNode.children[2]);
         }
     }
 
@@ -40,7 +40,7 @@ input.addEventListener("keyup", function () {
         span.innerText = input_re.getAttribute("msg1");
         input_re.parentNode.appendChild(span);
         if (input_re.parentNode.children[3] != null) {
-            input_re.parentNode.removeChild(input_re.nextElementSibling);
+            input_re.parentNode.removeChild(input_re.parentNode.children[3]);
         }
     }
 });
@@ -51,7 +51,7 @@ input_re.addEventListener("keyup", function () {
         span.innerText = input_re.getAttribute("msg1");
         input_re.parentNode.appendChild(span);
         if (input_re.parentNode.children[3] != null) {
-            input_re.parentNode.removeChild(input.nextElementSibling);
+            input_re.parentNode.removeChild(input.parentNode.children[3]);
         }
     } else if (input_re.value != input.value) {
         input_re.parentNode.classList.add("has-error");
@@ -59,13 +59,13 @@ input_re.addEventListener("keyup", function () {
         span.innerText = input_re.getAttribute("msg");
         input_re.parentNode.appendChild(span);
         if (input_re.parentNode.children[3] != null) {
-            input_re.parentNode.removeChild(input_re.nextElementSibling);
+            input_re.parentNode.removeChild(input_re.parentNode.children[3]);
         }
     } else {
         input_re.parentNode.classList.remove("has-error");
         input_re.parentNode.classList.add("valid");
         if (input_re.parentNode.children[2] != null) {
-            input_re.parentNode.removeChild(input_re.nextElementSibling);
+            input_re.parentNode.removeChild(input_re.parentNode.children[2]);
         }
     }
 });
@@ -76,13 +76,13 @@ input_re.addEventListener("focus", function () {
         span.innerText = input_re.getAttribute("msg1");
         input_re.parentNode.appendChild(span);
         if (input_re.parentNode.children[3] != null) {
-            input_re.parentNode.removeChild(input_re.nextElementSibling);
+            input_re.parentNode.removeChild(input_re.parentNode.children[3]);
         }
     } else {
         input_re.parentNode.classList.remove("has-error");
         input_re.parentNode.classList.add("valid");
         if (input_re.parentNode.children[2] != null) {
-            input_re.parentNode.removeChild(input_re.nextElementSibling);
+            input_re.parentNode.removeChild(input_re.parentNode.children[2]);
         }
     }
 });
@@ -93,5 +93,17 @@ document.querySelector(".pass_form").addEventListener("submit", function (event)
         return true;
     } else {
         event.preventDefault();
+    }
+});
+
+document.querySelector(".pass_form").addEventListener("reset", function(){
+    input.parentNode.className = "input";
+    if (input.parentNode.children[2] != null) {
+        input.parentNode.removeChild(input.parentNode.children[2]);
+    }
+
+    input_re.parentNode.className = "input";
+    if (input_re.parentNode.children[2] != null) {
+        input_re.parentNode.removeChild(input_re.parentNode.children[2]);
     }
 });
